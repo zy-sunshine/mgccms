@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block sub_title %}首页{% endblock %}
+
+{% block content %}
+<div id="page">
+	<div id="page-bgtop">
+		<div id="contentdownload">
+			<div class="text_big">
+    			<h2>欢迎！</h2>
+    			{% render_content release.tease "html" %}
+    		</div>
+    		{% for ver_down in release.ver_down.all %}
+    		<div class="download">
+    			<a href="{{ ver_down.download_url }}"><strong>Download:&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>{{ ver_down.version }}</span></a>
+    		</div>
+    		{% endfor%}
+    		<a href="{% url mgcindex_index %}"><strong>Old Version ...</strong></a>
+    		<div class="image">
+    			<img src="{{ release.img_src_index }}" width='456' alt="{{ release.title }}" title="{{ release.title }}" />
+    		</div>
+		</div>
+		<!-- 以下是三栏  -->
+		<div id="contentlist">
+        	<ul>
+        	    <li>
+    				<div class="title"><a href="{{ SITE_CONFIG.news_url }}">新闻</a></div>
+    				{% index_news_list top %}
+			    </li>
+			    <li>
+    				<div class="title"><a href="{{ SITE_CONFIG.guide_url }}">快速指南</a></div>
+    				{#% index_guide_list top %#}
+			    </li>
+			    <li>
+    				<div class="title"><a href="{{ SITE_CONFIG.projects_url }}">开源项目</a></div>
+    				{% index_projects_list top %}
+			    </li>
+			</ul>
+        </div>
+		<!-- end #content_index -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end #page -->
+{% endblock %}

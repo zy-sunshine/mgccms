@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block sub_title %}Create an account{% endblock %}
+
+{% block content %}
+<div id="content-main" class="span-13 prepend-1 colborder">
+<div class="loginouter">
+	<div class="logininer">
+	<form action="/accounts/register/" method="post" accept-charset="utf-8">
+	<fieldset>
+		<legend><div class="logintitle">Create an account</div></legend>
+		<!--  
+		<label for="id_username">用户名</label>
+		<p><input id="id_username" type="text" name="username" maxlength="255" />
+			
+		</p>
+		<label for="id_email">E-mail</label>
+		<p><input type="text" name="email" id="id_email" />
+			
+		</p>
+		<label for="id_password1">密码</label>
+		<p><input type="password" name="password1" id="id_password1" />
+			
+		</p>
+		<label for="id_password2">密码(重复)</label>
+		<p><input type="password" name="password2" id="id_password2" />
+			
+		</p>
+		-->
+		{{ form.as_p }}
+	</fieldset>
+	<p id="login_button"><input type="submit" value="注册" /></p>
+	</form>
+	</div>
+</div>
+	</div><!-- END content-main -->
+	<div id="content_related" class="span-8 last">
+		
+	<div class="box">
+		
+		
+	</div>
+
+	</div><!-- END content-related -->
+{% endblock %}

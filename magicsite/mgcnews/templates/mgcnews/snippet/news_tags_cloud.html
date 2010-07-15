@@ -1,0 +1,8 @@
+{% load tagging_tags %}
+
+{% tag_cloud_for_model mgcnews.mlNews as widget_tags with steps=4 distribution=linear %}
+<ul>
+	{% for t in widget_tags %}
+    <li><a href="{% url mgcnews_tags t %}" title="{{ t.count }} news tagged">{{t}}</a></li>
+    {% endfor %}
+</ul>

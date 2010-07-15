@@ -1,0 +1,5 @@
+<ul>
+    {% for o in news %}
+    <li><a href="{{o.get_absolute_url}}" title="{{o}}">{{o|truncate_zh:12}}</a> digg: {{ o.digg }}</li>
+    {% endfor %}
+</ul>

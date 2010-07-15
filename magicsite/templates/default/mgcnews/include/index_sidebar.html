@@ -1,0 +1,22 @@
+		<div id="sidebar">
+			<ul>
+				<li>
+					<div class="title">最新文章</div>
+					{% news_last_articles %}
+				</li>
+				<li>
+					<div class="title">文章存档</div>
+					{% news_month_links %}
+				</li>
+				<li>
+					<div class="title">文章分类</div>
+					{% include "mgcnews/snippet/news_tags_cloud.html" %}
+				</li>
+				<li>
+					<div class="title">榜上十名</div>
+					{% news_top_digg %}
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>

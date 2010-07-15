@@ -1,0 +1,15 @@
+{% load attachments_tags %}
+{% get_attachments_for news as "my_entry_attachments" %}
+
+{% if my_entry_attachments %}
+<ul>
+{% for attachment in my_entry_attachments %}
+    <li>
+        <a href="{{ attachment.attachment_file.url }}">{{ attachment.filename }}</a>
+        {#% attachment_delete_link attachment %#}
+    </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{#% attachment_form news %#}

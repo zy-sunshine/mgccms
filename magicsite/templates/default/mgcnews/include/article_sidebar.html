@@ -1,0 +1,14 @@
+		<div id="sidebar">
+			<ul>
+				<li>
+					<div class="title">相关文章</div>
+					{% news_relate_tag_articles 10 news %}
+				</li>
+				<li>
+					<div class="title">文章分类</div>
+					{% include "mgcnews/snippet/news_tags_cloud.html" %}
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>

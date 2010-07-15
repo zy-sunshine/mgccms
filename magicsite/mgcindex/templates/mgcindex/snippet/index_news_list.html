@@ -1,0 +1,5 @@
+<ul>
+	{% for item in items %}
+	<li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title|truncate_zh:20 }}</a></li>
+	{% endfor %}
+</ul>

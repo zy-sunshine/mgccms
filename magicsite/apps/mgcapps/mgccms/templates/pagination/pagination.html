@@ -1,0 +1,27 @@
+<div id="pagination">
+	<span class="pageitem"><a href="?page=1{{getvars}}" class="first">First</a></span>
+    {% if has_previous %}
+    <span class="pageitem"><a href="?page={{previous}}{{getvars}}" class="prev">Previous</a></span>	
+    {% endif %}
+    
+    {% if has_range_prev %}
+	<span class="pageomit">...</span>
+	{% endif %}
+	
+    {% for i in page_range %}
+    {% ifequal forloop.counter page %}
+    <span class="pagecurrent">{{ page }}</span>
+    {% else %}
+    <span class="pageitem"><a href="?page={{ i }}" class="page">{{ i }}</a></span>
+    {% endifequal %}
+    {% endfor %}
+    
+    {% if has_range_next %}
+    <span class="pageomit">...</span>
+	{% endif %}
+    
+    {% if has_next %}
+    <span class="pageitem"><a href="?page={{next}}{{getvars}}" class="next">Next</a></span>
+    {% endif %}
+    <span class="pageitem"><a href="?page={{pages}}{{getvars}}" class="last">Last</a></span>
+</div>

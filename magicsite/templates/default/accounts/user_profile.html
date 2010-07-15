@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="profile_content">
+<div id="nav" class="span-24 last">
+	<ul class="hmenu">
+		<li class="active"><a href="/accounts/profile/">详情</a></li>
+		<li><a href="/accounts/profile/edit/personal/">个人信息</a></li>
+		
+		<li><a href="/accounts/profile/delete/">移除帐户</a></li>
+	</ul>
+</div>
+	<form action="" method="post">
+	<fieldset>
+		<legend>Overview of your profile</legend>
+		
+		<div id="profile_text" class="span-9 last box">
+
+			<h3>{{ user.username }}'s profile</h3>
+		</div>
+
+		<div id="profile_text" class="span-9 last">
+			<p><label for="id_user">用户名：</label> {{ user.username }}</p>
+			<p><label for="id_email">E-mail:</label>
+				<span class="">
+				{{ user.email }}
+				</span>
+			</p>
+			<p>
+				<p><label for="id_firstname">Firstname:</label>
+				<span class="quiet red">{{ user.first_name }}</span>
+			</p>
+				<p><label for="id_surname">Surname:</label>
+				<span class="quiet red">{{ user.first_name }}</span>
+			</p>
+			<!-- 
+				<p><label for="id_gender">Gender:</label>
+				<span class="quiet red">{{ user.first_name }}</span>
+			</p>
+			 
+				<p><label for="id_birthdate">Birthdate:</label>
+			
+				2010-07-04
+			</p>
+			
+				<p><label for="id_website">Website:</label>
+				<span class="quiet red">Not set</span>
+			</p>
+			
+				<p><label for="id_about">About:</label>
+				<span class="quiet red">Not set</span>
+			</p>
+			-->
+		</div>
+	</fieldset>
+	</form>
+	<div class="box">
+		<h3>Management:</h3>
+		<a href="/accounts/password/change/">修改密码</a>
+		<a href="/accounts/email/validation/">Change your e-mail address</a>
+	</div>
+	<div id="profile_bottom"></div>
+</div>
+{% endblock %}

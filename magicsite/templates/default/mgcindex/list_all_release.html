@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load comments %}
+{% load pagination_tags %}
+
+{% block sub_title %}所有发行版{% endblock %}
+
+{% block content %}
+<div id="page">
+	<div id="page-bgtop">
+{% for item in page_obj.object_list %}
+		<div id="contentdownload">
+			<div class="text_big">
+				{% render_content item.tease "html" %}
+			</div>
+			{% for ver_down in item.ver_down.all %}
+    		<div class="download">
+    			<a href="{{ ver_down.download_url }}"><strong>Download:&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>{{ ver_down.version }}</span></a>
+    		</div>
+    		{% endfor%}
+			<div class="image">
+				<img src="{{ item.img_src_index }}" width='456' alt="{{ item.title }}" title="{{ item.title }}" />
+			</div>
+		</div>
+{% endfor %}
+
+{% render_paginate %}
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end #page -->
+
+{% endblock %}

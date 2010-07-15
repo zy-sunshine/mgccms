@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=GBK" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title>{{ SITE_CONFIG.title }} - {% block sub_title %}{% endblock %}</title>
+
+	{% block extra_head_meta %}
+	{% endblock %}
+
+	<link href="{{ MEDIA_URL }}css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link rel="shortcut icon" type="image/ico" href="{{ MEDIA_URL }}img/favicon.ico" />
+
+	{% block extra_head_css %}
+	{% endblock %}
+	
+	{% block extra_head_script %} 
+	{% endblock %}
+
+</head>
+<body>    
+<div id="wrapper">
+    {% block header %}
+    <div id="logo">
+		<a href="{{ SITE_CONFIG.index_url }}">Magic Linux</a>
+	</div>
+	<hr />
+	<!-- end #logo -->
+	{% endblock %}
+	
+	{% block navi %}
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li{{ navi_index|safe }}><a href="/" class="first">Home</a></li>
+				<li{{ navi_news|safe }}><a title="MagicLinux's News" href="{{ SITE_CONFIG.news_url }}">News</a></li>
+				<!-- <li{{ navi_guide|safe }}><a title="MagicLinux's Guide" href="{{ SITE_CONFIG.guide_url }}">Guide</a></li> -->
+				<li{{ navi_projects|safe }}><a title="MagicLinux's Projects" href="{{ SITE_CONFIG.projects_url }}">Projects</a></li>
+				<!-- <li{{ navi_history|safe }}><a title="MagicLinux's History" href="{{ SITE_CONFIG.history_url }}">History</a></li> -->
+				<!-- <li{{ navi_contact|safe }}><a href="#">Contact</a></li> -->
+			</ul>
+		</div>
+		<!-- end #menu -->
+		<!-- 
+		<div id="search">
+			<form method="get" action="{{ SITE_CONFIG.search_url }}">
+				<fieldset>
+				<input type="text" name="s" id="search-text" size="15" value="Key Words..." onfocus="if (value =='Key Words...'){value =''}" onblur="if (value ==''){value='Key Words...'}" />
+				<input type="submit" id="search-submit" value="GO" />
+				</fieldset>
+			</form>
+		</div>
+		 -->
+		<!-- 
+		<div id="logon">
+			{% block logon %}
+			{% if user.is_authenticated %}
+			<a href="{% url accounts_profile %}">{{ user.username }}</a><span> / </span><a href="{% url accounts_logout %}">登出</a>
+			{% else %}
+			<a href="{% url accounts_login %}?next={{ request.path }}">登入</a><span> / </span><a href="{% url accounts_register %}">注册</a>
+			{% endif %}
+			{% endblock %}
+		</div>
+		 -->
+		<!-- end #search -->
+	</div>
+	<!-- end #header -->
+	<!-- end #header-wrapper -->
+	{% endblock %}
+	
+	{% block content %}
+	{% endblock %}
+	
+	<div class="blank"></div>
+	
+	{% block footer %}
+	<div id="footer-bgcontent">
+	<div id="footer">
+		<p>Copyright (c) 2010 MagicLinux All rights reserved. Design by <a href="http://www.linuxfans.org/bbs">LinuxFans</a>.</p>
+	</div>
+	</div>
+	<!-- end #footer -->
+	{% endblock %}
+
+</div>
+
+	{% block bottom_script %}
+	{% endblock %}
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+		<div id="sidebar">
+			<ul>
+				<li>
+					<div class="title">最新文章</div>
+					{% projects_last_articles %}
+				</li>
+				<li>
+					<div class="title">文章存档</div>
+					{% projects_month_links %}
+				</li>
+				<li>
+					<div class="title">文章分类</div>
+					{% include "mgcprojects/snippet/projects_tags_cloud.html" %}
+				</li>
+				<li>
+					<div class="title">榜上十名</div>
+					{% projects_top_digg %}
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+		

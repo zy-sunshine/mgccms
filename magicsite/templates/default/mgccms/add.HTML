@@ -1,0 +1,148 @@
+﻿{% extends "base.html" %}
+
+{% block extra_head_css %}
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/appcenter.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}rating/css/rating.css" type="text/css" media="screen, projection" />
+{% endblock %}
+
+{% block extra_head_script %} 
+<script type="text/javascript">
+	$(function() {
+		$("input[type='text']").addClass("text");
+		$("form input")[0].focus();
+	});
+</script>
+{% endblock %}
+
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1><a href="/">Ubuntu Tweak</a></h1>
+		<form action="/source/search/">
+			<input type="text" id="s" name="q" value="搜索软件或源..." onfocus="if (value =='搜索软件或源...'){value =''}" onblur="if (value ==''){value='搜索软件或源...'}" />
+			<input type="submit" value=" " id="searchsubmit"/>
+		</form>
+	</div>
+	<div id="navi">
+		<ul class="lavaLamp">
+			<li><a title="ubuntu tweak home" href="/">Home</a></li>
+			<li><a title="application" href="/app/">App</a></li>
+			<li class="current"><a title="application source" href="/source/">Source</a></li>
+			<li><a title="Ubuntu Tweak Blog" href="http://blog.ubuntu-tweak.com" target="_blank">Blog</a></li>
+			<li><a title="about ubuntu tweak" href="/about/">About</a></li>
+		</ul>
+		<div id="logon">
+			
+			<a href="/accounts/profile/">zy_sunshine的帐户</a><span> / </span><a href="/accounts/logout/">登出</a>
+			
+		</div>
+	</div>
+	
+
+{% block content_left %}
+<div class="appcontent appcontent_single">
+	<div class="appcontent_single_top"></div>
+	<div class="app_de_content">
+		<h3>Add source</h3>
+        <form class="personal" enctype="multipart/form-data" action="/source/+add/" method="POST">
+		
+	<p><label for="id_website">Website</label><input id="id_website" type="text" name="website" maxlength="200" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_applications">Applications</label><select multiple="multiple" name="applications" id="id_applications">
+
+<option value="254">Glippy</option>
+<option value="255">OGRE</option>
+</select>
+	<span class="help_text"> 按下 &quot;Control&quot;，或者在Mac上按 &quot;Command&quot; 来选择多个值。</span></p>
+	
+	
+	<p><label for="id_category">Category</label><select name="category" id="id_category">
+<option value="" selected="selected">---------</option>
+<option value="11">Browser</option>
+<option value="10">Theme</option>
+<option value="13">Utility</option>
+</select>
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_has_source">Has source</label><input type="checkbox" name="has_source" id="id_has_source" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_level">Level</label><select name="level" id="id_level">
+<option value="0" selected="selected">Normal Application</option>
+<option value="1">Library</option>
+<option value="2">Kernel and X</option>
+<option value="3">Full Mirror Source</option>
+</select>
+	<span class="help_text"></span></p>
+	
+	
+	    <input name="submit" type="submit" class="submit" value="保存" />
+        </form>
+	<div class="blank"></div>
+	</div>
+	<div class="appcontent_single_bottom"></div>
+</div>
+{% endblock %}
+
+{% block content_right %}
+<div class="sidebar">
+	
+<div class="sidebaritem">
+	<div class="sidebaritem_top"><a class="title" href="/source/category/">分类</a></div>
+    <ul>
+        
+	
+        <li><a href="/source/category/browser/" title="浏览器">浏览器</a></li>
+        
+	
+        <li><a href="/source/category/desktop/" title="桌面">桌面</a></li>        
+	
+        <li><a href="/source/category/international/" title="国际化工具">国际化工具</a></li>
+        
+	<li><a href="/source/category/" title="View more">更多...</a></li>
+    </ul>
+	<div class="sidebaritem_bottom"></div>
+</div>
+
+	
+<div class="sidebaritem haveiconlist"> 
+	<div class="sidebaritem_top"><a class="title" href="/source/category/">Top-10 Sources</a></div>
+    <ul>
+        
+	
+	<li><img src="/static/sourcecenter/logo/ubuntu-tweak-icon.png" title="Ubuntu Tweak Stable Source" /> <a href="/source/ubuntu-tweak-stable/">Ubuntu Tweak Stable Source</a></li> 
+	
+    </ul>
+	<div class="sidebaritem_bottom"></div>
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<div id="footer">
+	Powered by <a href="http://www.djangoproject.com">Django</a>. &copy; 2009-2010 UTCOM 0.1. All rights reserved.
+</div>
+{% endblock %}
+
+</div>
+
+{% block bottom_script %}
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-503846-7");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+{% endblock %}
+
+

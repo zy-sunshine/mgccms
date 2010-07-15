@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load comments %}
+{% load pagination_tags %}
+
+{% block sub_title %}开源项目{% endblock %}
+
+{% block content %}
+
+<div id="page">
+	<div id="page-bgtop">
+		<div id="content">
+{% if tag %}
+    	<h3>Posts tagged: {{tag}}</h3>
+{% endif %}
+{% if archive_month %}
+    	<h3>Archives: {{ archive_month|date:"F Y" }}</h3>
+{% endif %}
+
+		{% for item in page_obj.object_list %}
+		<div class="post">
+			<h2 class="title"><img width="24" hight="24" src="{{ item.img_src }}"/> <a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+			<p class="meta">{{ item.created_at }} Posted by {{ item.author }}</p>
+			<div class="contententry">
+				{% render_content item.tease "html" %}
+			</div>
+			<div class="postlinks">
+				<span class="postdetail"><a href="{{ item.get_absolute_url }}" class="readmore">View More >></a></span>
+				<span class="posttags">Tags: {% news_show_tags_for_article item %}</span>
+				<span class="postdigg">Clicked: {{ item.digg }}</span>
+				<span class="postcomments">Comments: <a href="{{ item.get_absolute_url }}#comments">{% get_comment_count for item as commentcount %}{{ commentcount }}</a></span>
+			</div>
+		</div>
+		{% endfor %}
+		{% render_paginate %}
+	</div>
+	<!-- end #content -->
+	{% include "mgcprojects/include/index_sidebar.html" %}
+</div>
+</div>
+<!-- end #page -->
+
+{% endblock %}

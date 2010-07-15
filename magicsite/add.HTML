@@ -1,0 +1,462 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>Add source - Ubuntu-Tweak.com</title>
+
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<link rel="shortcut icon" type="image/ico" href="/static/img/favicon.ico" />
+	
+	<link rel="stylesheet" type="text/css" href="/static/css/appcenter.css" />
+
+
+	<script type='text/javascript' src='/static/js/jquery.min.js'></script>
+	<script type='text/javascript' src='/static/js/lavalamp.min.js'></script>
+	<script type='text/javascript' src='/static/js/easing.js'></script>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function(){$(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+	/* ]]> */
+	</script>
+	
+<script type="text/javascript">
+	$(function() {
+		$("input[type='text']").addClass("text");
+		$("form input")[0].focus();
+	});
+</script>
+
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1><a href="/">Ubuntu Tweak</a></h1>
+		<form action="/source/search/">
+			<input type="text" id="s" name="q" value="搜索软件或源..." onfocus="if (value =='搜索软件或源...'){value =''}" onblur="if (value ==''){value='搜索软件或源...'}" />
+			<input type="submit" value=" " id="searchsubmit"/>
+		</form>
+	</div>
+	<div id="navi">
+		<ul class="lavaLamp">
+			<li><a title="ubuntu tweak home" href="/">Home</a></li>
+			<li><a title="application" href="/app/">App</a></li>
+			<li class="current"><a title="application source" href="/source/">Source</a></li>
+			<li><a title="Ubuntu Tweak Blog" href="http://blog.ubuntu-tweak.com" target="_blank">Blog</a></li>
+			<li><a title="about ubuntu tweak" href="/about/">About</a></li>
+		</ul>
+		<div id="logon">
+			
+			<a href="/accounts/profile/">zy_sunshine的帐户</a><span> / </span><a href="/accounts/logout/">登出</a>
+			
+		</div>
+	</div>
+	
+
+
+<div class="appcontent appcontent_single">
+	<div class="appcontent_single_top"></div>
+	<div class="app_de_content">
+		<h3>Add source</h3>
+        <form class="personal" enctype="multipart/form-data" action="/source/+add/" method="POST">
+	
+	<p><label for="id_name">Name</label><input id="id_name" type="text" name="name" maxlength="120" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_summary">Summary</label><input id="id_summary" type="text" name="summary" maxlength="250" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_logo">Logo</label><input type="file" name="logo" id="id_logo" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_entry">Entry</label><textarea id="id_entry" rows="10" cols="40" name="entry"></textarea>
+	<span class="help_text">The raw data of source</span></p>
+	
+	
+	<p><label for="id_key">Key</label><textarea id="id_key" rows="10" cols="40" name="key"></textarea>
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_website">Website</label><input id="id_website" type="text" name="website" maxlength="200" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_applications">Applications</label><select multiple="multiple" name="applications" id="id_applications">
+<option value="1">Ubuntu Tweak</option>
+<option value="2">Chromium Browser</option>
+<option value="3">Shutter</option>
+<option value="4">Docky</option>
+<option value="5">GIMP</option>
+<option value="6">GNOME Do</option>
+<option value="7">Dropbox</option>
+<option value="8">Exaile</option>
+<option value="9">Agave</option>
+<option value="10">FileZilla</option>
+<option value="11">Skype</option>
+<option value="12">Pidgin</option>
+<option value="13">Empathy</option>
+<option value="14">Midori</option>
+<option value="15">Firefox</option>
+<option value="16">Gloobus Preview</option>
+<option value="17">Netbeans</option>
+<option value="18">Elementary Theme</option>
+<option value="19">Geany</option>
+<option value="20">aMule</option>
+<option value="21">Aquadreams-Theme</option>
+<option value="22">Balanzan-Theme</option>
+<option value="23">Bamboo-Zen-Theme</option>
+<option value="24">Exotic-Theme</option>
+<option value="25">Infinity-Theme</option>
+<option value="26">Showtime-Theme</option>
+<option value="27">Step-Into-Freedom-Theme</option>
+<option value="28">Ubuntu-Sunrise-Theme</option>
+<option value="29">Tropical-Theme</option>
+<option value="30">Wild-Shine-Theme</option>
+<option value="31">Anjuta</option>
+<option value="33">Emesene</option>
+<option value="34">Arc-Colors</option>
+<option value="35">GNOME-colors</option>
+<option value="36">Miro</option>
+<option value="37">Blueman</option>
+<option value="38">BleachBit</option>
+<option value="39">Code Blocks</option>
+<option value="40">Openshot</option>
+<option value="41">Devhelp</option>
+<option value="42">Dia</option>
+<option value="43">Inkscape</option>
+<option value="44">Banshee</option>
+<option value="99">7zip</option>
+<option value="45">GNOME Mplayer</option>
+<option value="46">Eclipse</option>
+<option value="47">KeePassX</option>
+<option value="48">GMPC</option>
+<option value="49">EasyTAG </option>
+<option value="50">Cheese</option>
+<option value="51">Opera</option>
+<option value="52">Breathe Icon Theme</option>
+<option value="53">Cairo Dock</option>
+<option value="54">Gmchess</option>
+<option value="55">Gnote</option>
+<option value="56">Kdenlive</option>
+<option value="57">Wine</option>
+<option value="58">Google Chrome Beta</option>
+<option value="59">Google Chrome Unstable</option>
+<option value="60">SMPlayer</option>
+<option value="61">PiTiVi</option>
+<option value="62">PDFMod</option>
+<option value="63">Thunderbird</option>
+<option value="64">Leafpad</option>
+<option value="65">Postr</option>
+<option value="66">GHex</option>
+<option value="67">Transmission</option>
+<option value="68">Getting Things GNOME!</option>
+<option value="69">qutIM</option>
+<option value="70">wakoopa</option>
+<option value="71">Audacious</option>
+<option value="72">Audacity</option>
+<option value="73">Avant Window Navigator</option>
+<option value="74">qBitTorrent</option>
+<option value="75">Boxee</option>
+<option value="76">Songbird</option>
+<option value="77">Pino</option>
+<option value="78">Viewnior</option>
+<option value="79">GNOME Shell</option>
+<option value="80">GCstar</option>
+<option value="81">Avidemux</option>
+<option value="82">DockBarX</option>
+<option value="83">Flush</option>
+<option value="84">Zim</option>
+<option value="85">Claws Mail</option>
+<option value="86">OSD Lyrics</option>
+<option value="87">Adobe Flash Player plugin installer (x86-64)</option>
+<option value="88">Adobe Flash Player plugin installer (i386)</option>
+<option value="89">Network Manager</option>
+<option value="90">Evolution</option>
+<option value="91">Ubuntu Restricted Extras</option>
+<option value="93">Screenlets</option>
+<option value="92">Gwibber</option>
+<option value="94">LinuxDC++</option>
+<option value="95">GameConqueror</option>
+<option value="96">GCIN</option>
+<option value="97">Scribus</option>
+<option value="98">PlayOnLinux</option>
+<option value="100">Avant Windows Navigator (trunk - unstable)</option>
+<option value="101">Christine</option>
+<option value="102">OGMRip</option>
+<option value="103">PictureWall</option>
+<option value="104">Dockbar</option>
+<option value="105">Solang</option>
+<option value="106">RawTherapee</option>
+<option value="107">GNOME Globamenu</option>
+<option value="108">K3b</option>
+<option value="109">Gparted</option>
+<option value="110">Gmountiso</option>
+<option value="111">Gufw</option>
+<option value="112">Gpicview</option>
+<option value="113">Blender</option>
+<option value="114">Wormux</option>
+<option value="115">Secret Maryo Chronicles</option>
+<option value="116">Ardour</option>
+<option value="117">Nexuiz</option>
+<option value="118">OpenArena</option>
+<option value="119">Alien Arena</option>
+<option value="120">Tremulous</option>
+<option value="121">Gcompris</option>
+<option value="122">SuperTux</option>
+<option value="123">SuperTux Kart</option>
+<option value="124">Njam Pacman</option>
+<option value="125">Warzone 2100</option>
+<option value="126">Free Droid Rpg</option>
+<option value="127">Vegastrike</option>
+<option value="128">Flight Gear</option>
+<option value="129">LinCity NG</option>
+<option value="130">Open TTD</option>
+<option value="131">Frets On Fire</option>
+<option value="132">Performous</option>
+<option value="133">The Mana World</option>
+<option value="134">Blob Wars</option>
+<option value="135">Blob Wars 2 - Blob and Conquer</option>
+<option value="136">BosWars</option>
+<option value="137">Boson</option>
+<option value="138">BZFlag</option>
+<option value="139">FreeCol</option>
+<option value="140">Billard Gl</option>
+<option value="141">FreeCiv</option>
+<option value="142">FreeTennis</option>
+<option value="143">Frozen-Bubble</option>
+<option value="144">Glest</option>
+<option value="145">Tucan Manager</option>
+<option value="146">Globulation 2</option>
+<option value="147">Gunroar</option>
+<option value="148">HedgeWars</option>
+<option value="149">The Battle for Wesnoth</option>
+<option value="150">NeverBall</option>
+<option value="151">Oolite</option>
+<option value="152">Sauerbraten</option>
+<option value="153">Scorched3D</option>
+<option value="154">SDL ball</option>
+<option value="155">Titanion</option>
+<option value="156">Torus Trooper</option>
+<option value="157">Warsow</option>
+<option value="158">Widelands</option>
+<option value="159">Java Sun JRE</option>
+<option value="160">Sensors Applet</option>
+<option value="161">Acire</option>
+<option value="162">SopCast Player</option>
+<option value="163">XBMC Media Center</option>
+<option value="164">Giver</option>
+<option value="165">Minitube</option>
+<option value="166">GNOME Activity Journal</option>
+<option value="167">Tracker</option>
+<option value="168">Enlightenment</option>
+<option value="169">Liferea</option>
+<option value="170">AcetoneISO</option>
+<option value="171">Rapid Photo Downloader</option>
+<option value="172">Extreme Tux Racer</option>
+<option value="173">Battle Tanks</option>
+<option value="174">Déjà Dup</option>
+<option value="175">GDM2Setup</option>
+<option value="176">XSplash Background Settings</option>
+<option value="177">Terminator</option>
+<option value="178">VLC Media Player</option>
+<option value="179">VirtualBox</option>
+<option value="180">Homebank</option>
+<option value="181">Shiki-colors</option>
+<option value="182">Zsnes</option>
+<option value="183">Visual Boy Advance</option>
+<option value="184">PCSX-Reloaded</option>
+<option value="185">Mupen64 Plus</option>
+<option value="186">DeSmuME</option>
+<option value="187">Alexandria</option>
+<option value="188">Mumble</option>
+<option value="189">Kupfer</option>
+<option value="190">IceCat</option>
+<option value="191">RSSOwl</option>
+<option value="192">Synapse</option>
+<option value="208">RabbitVCS</option>
+<option value="193">Quantum GIS</option>
+<option value="194">Hugin</option>
+<option value="195">Tomboy</option>
+<option value="196">Pinta</option>
+<option value="197">Google Gadgets</option>
+<option value="198">Cover Thumbnailer</option>
+<option value="199">GNOME Media Player</option>
+<option value="200">Deluge</option>
+<option value="201">Subtitle Editor</option>
+<option value="202">Comix</option>
+<option value="203">QMMP</option>
+<option value="204">Bangarang</option>
+<option value="205">Mupen64Plus</option>
+<option value="206">Ubuntu community themes</option>
+<option value="207">HandBrake</option>
+<option value="209">Remmina</option>
+<option value="210">Truecrypt</option>
+<option value="211">Quod Libet</option>
+<option value="212">Music Player Daemon</option>
+<option value="213">Google Earth</option>
+<option value="214">ZiK</option>
+<option value="215">ChmSee</option>
+<option value="216">Test Drive</option>
+<option value="217">Canola</option>
+<option value="218">Moovida</option>
+<option value="219">EiskaltDC++</option>
+<option value="220">XQF Game Server Browser</option>
+<option value="221">WineGame</option>
+<option value="222">Aegisub</option>
+<option value="223">Alarm Clock</option>
+<option value="224">Phatch</option>
+<option value="225">Gnome Media Player (Dev Channel)</option>
+<option value="226">FreeDC++</option>
+<option value="227">Dolphin</option>
+<option value="228">Geogebra</option>
+<option value="229">JClic</option>
+<option value="230">Chromium Browser - Dev Channel</option>
+<option value="231">Chromium Browser - Beta Channel</option>
+<option value="232">samsung-tools</option>
+<option value="233">Caffeine</option>
+<option value="234">Granola</option>
+<option value="235">psi plus</option>
+<option value="236">xNeur</option>
+<option value="237">Electric Sheep - The Screensaver</option>
+<option value="238">BOINC - Help planetary projects</option>
+<option value="239">Mangler</option>
+<option value="240">CDEmu</option>
+<option value="241">Google Chrome Stable</option>
+<option value="242">Byobu</option>
+<option value="245">Subsonic</option>
+<option value="243">Midnight Commander</option>
+<option value="244">Clam AntiVirus</option>
+<option value="246">Basenji</option>
+<option value="252">Real-time Sunlight Wallpaper</option>
+<option value="247">FreeFileSync</option>
+<option value="248">DeaDBeeF</option>
+<option value="249">Gfire</option>
+<option value="250">Shotwell</option>
+<option value="251">LiVES Video Editing System</option>
+<option value="253">Emesene 2</option>
+<option value="254">Glippy</option>
+<option value="255">OGRE</option>
+</select>
+	<span class="help_text"> 按下 &quot;Control&quot;，或者在Mac上按 &quot;Command&quot; 来选择多个值。</span></p>
+	
+	
+	<p><label for="id_category">Category</label><select name="category" id="id_category">
+<option value="" selected="selected">---------</option>
+<option value="11">Browser</option>
+<option value="3">Desktop</option>
+<option value="7">Development Kit</option>
+<option value="16">Email</option>
+<option value="15">Emulator</option>
+<option value="17">File Sharing</option>
+<option value="4">Game</option>
+<option value="8">Image</option>
+<option value="12">Instant Message</option>
+<option value="9">International</option>
+<option value="2">Internet</option>
+<option value="5">Multimedia</option>
+<option value="1">Other</option>
+<option value="6">Personal</option>
+<option value="14">Text</option>
+<option value="10">Theme</option>
+<option value="13">Utility</option>
+</select>
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_has_source">Has source</label><input type="checkbox" name="has_source" id="id_has_source" />
+	<span class="help_text"></span></p>
+	
+	
+	<p><label for="id_level">Level</label><select name="level" id="id_level">
+<option value="0" selected="selected">Normal Application</option>
+<option value="1">Library</option>
+<option value="2">Kernel and X</option>
+<option value="3">Full Mirror Source</option>
+</select>
+	<span class="help_text"></span></p>
+	
+	
+	    <input name="submit" type="submit" class="submit" value="保存" />
+        </form>
+	<div class="blank"></div>
+	</div>
+	<div class="appcontent_single_bottom"></div>
+</div>
+
+<div class="sidebar">
+	
+<div class="sidebaritem">
+	<div class="sidebaritem_top"><a class="title" href="/source/category/">分类</a></div>
+    <ul>
+        
+	
+        <li><a href="/source/category/browser/" title="浏览器">浏览器</a></li>
+        
+	
+        <li><a href="/source/category/desktop/" title="桌面">桌面</a></li>
+        
+	
+        <li><a href="/source/category/development-kit/" title="开发工具">开发工具</a></li>
+        
+	
+        <li><a href="/source/category/email/" title="邮件">邮件</a></li>
+        
+	
+        <li><a href="/source/category/emulator/" title="模拟器">模拟器</a></li>
+        
+	
+        <li><a href="/source/category/file-sharing/" title="文件共享">文件共享</a></li>
+        
+	
+        <li><a href="/source/category/game/" title="游戏">游戏</a></li>
+        
+	
+        <li><a href="/source/category/image/" title="图像">图像</a></li>
+        
+	
+        <li><a href="/source/category/instant-message/" title="即时通讯">即时通讯</a></li>
+        
+	
+        <li><a href="/source/category/international/" title="国际化工具">国际化工具</a></li>
+        
+	<li><a href="/source/category/" title="View more">更多...</a></li>
+    </ul>
+	<div class="sidebaritem_bottom"></div>
+</div>
+
+	
+<div class="sidebaritem haveiconlist"> 
+	<div class="sidebaritem_top"><a class="title" href="/source/category/">Top-10 Sources</a></div>
+    <ul>
+        
+	
+	<li><img src="/static/sourcecenter/logo/ubuntu-tweak-icon.png" title="Ubuntu Tweak Stable Source" /> <a href="/source/ubuntu-tweak-stable/">Ubuntu Tweak Stable Source</a></li> 
+	
+    </ul>
+	<div class="sidebaritem_bottom"></div>
+</div>
+
+</div>
+
+
+
+	<div class="blank"></div>
+<div id="footer">
+	Powered by <a href="http://www.djangoproject.com">Django</a>. &copy; 2009-2010 UTCOM 0.1. All rights reserved.
+</div>
+
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-503846-7");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+</body>
+</html>

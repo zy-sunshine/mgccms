@@ -1,0 +1,5 @@
+<ul>
+	{% for d in dates reversed %}
+	<li><a href="{% url mgcindex_month_archive d.year d.month %}">{{ d|date:"F Y" }}</a></li>
+	{% endfor %}
+</ul>

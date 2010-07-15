@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block sub_title %}{{ news }}{% endblock %}
+
+{% block content %}
+<div id="page">
+	<div id="page-bgtop">
+		<div id="content">
+		<div class="post">
+			<h2 class="title"><a href="{{ news.get_absolute_url }}">{{ news }}</a></h2>
+			<p class="meta">{{ news.created_at }} Posted by {{ news.author }}</p>
+			<div class="contententry">
+				{% render_content news.body news.markup %}
+			</div>
+			<div class="postlinks">
+				<span class="posttags">Tags: {% news_show_tags_for_article news %}</span>
+				<span class="postdigg">Clicked: {{ news.digg }}</span>
+				<span class="postcomments">Comments: <a href="{{ item.get_absolute_url }}#comments">{% get_comment_count for news as commentcount %}{{ commentcount }}</a></span>
+			</div>
+		</div>
+		{% if news.allow_comments %}
+		<div id="comments">	
+			<h3>{{ commentcount }} Comments</h3>
+			{% get_comment_list for news as tree %}
+			<ol class="commentlist">
+			   	{% for comment in tree %}
+			   	<li>
+				   	<div class="commentauthor">
+				   		Posted by <a href="{{ comment.user_url }}">{{comment.user_name}}</a> &mdash; At {{comment.submit_date}}
+				   	</div>
+					{% render_content comment.comment "" %}
+				</li>
+			    {% endfor %}
+		    </ol>
+		    <div id="respond">
+				<h3>Leave a Comment</h3>
+			   	<form action="#comments" id="commentform" method="post">
+			        {{ form.as_p }}
+			    	<div class="actions">
+				      	<input class="submit" type="submit" value="Submit Comment">
+				     	<input class="reset" type="reset" value="Reset Form">
+			    	</div>
+			   	</form>
+			</div>
+		</div>
+        <!-- end #comment -->   
+        {% endif %}
+	</div>
+	<!-- end #content -->
+	{% include "mgcnews/include/article_sidebar.html" %}
+</div>
+</div>
+<!-- end #page -->
+
+{% endblock %}

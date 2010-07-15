@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content-main" class="span-13 prepend-1 colborder">
+<div class="loginouter">
+	<div class="logininer">
+	{% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+  	{% endif %}
+	<form action="/accounts/login/" method="post" accept-charset="utf-8">
+	<fieldset>
+		<legend><div class="logintitle">用户登入</div></legend>
+		<label for="username">User name:</label>
+		<p><input type="text" name="username" value="" id="username"></p>
+		<label for="password">Password:</label>
+		<p><input type="password" name="password" value="" id="password"></p>
+	</fieldset>
+	<p id="login_button">
+		<input type="submit" value="login" />
+		<a href="/accounts/password/reset/">忘记密码？</a>
+		<span>  |  </span>
+		<a href="/accounts/register/">注册！</a>
+	</p>
+	<input type="hidden" name="next" value="{{ next|escape }}" />
+	</form>
+	</div>
+</div>
+
+	</div><!-- END content-main -->
+	<div id="content_related" class="span-8 last">
+		
+	<div class="box">
+		
+		
+		
+	</div>
+
+	</div><!-- END content-related -->
+{% endblock %}
